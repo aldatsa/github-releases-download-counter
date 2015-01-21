@@ -1,11 +1,13 @@
 (function($) {
-    $.fn.githubReleasesDownloadCounter = function(options) {
+    $.fn.githubReleasesDownloadCounter = function(username, repository_name) {
 
         var $this = $(this);
 
-        var settings = $.extend({}, options);
+        var url = "https://api.github.com/repos/" + username + "/" + repository_name + "/releases";
 
-        var url = "https://api.github.com/repos/" + settings.username + "/" + settings.repository_name + "/releases";
+        if (!username) throw "Must provide a github username.";
+
+        if (!repository_name) throw "Must provide a github repository name.";
 
         $.ajax({
             dataType: "json",
