@@ -29,5 +29,8 @@
 
         });
 
+        // allow jQuery chaining
+        return this;
+        
     };
 }(jQuery));
