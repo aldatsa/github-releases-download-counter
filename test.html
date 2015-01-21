@@ -22,7 +22,15 @@
                 })
                 .done(function(data, textStatus, jqXHR) {
 
-                    console.log(data);
+                    var downloads = 0;
+
+                    var assets = data[0].assets;
+
+                    for (var i = 0; i < assets.length; i++) {
+                        downloads = downloads + assets[i].download_count;
+                    }
+
+                    console.log(downloads);
 
                 });
             });
