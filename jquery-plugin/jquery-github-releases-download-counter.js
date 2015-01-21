@@ -1,16 +1,11 @@
 (function($) {
-    $.fn.githubReleasesDownloadCounter = function() {
+    $.fn.githubReleasesDownloadCounter = function(options) {
 
         var $this = $(this);
 
-        var github = {
-            username: "aldatsa",
-            repository_name: "pong-ds"
-        };
+        var settings = $.extend({}, options);
 
-        var url = "https://api.github.com/repos/" + github.username + "/" + github.repository_name + "/releases";
-
-        var data = {};
+        var url = "https://api.github.com/repos/" + settings.username + "/" + settings.repository_name + "/releases";
 
         $.ajax({
             dataType: "json",
