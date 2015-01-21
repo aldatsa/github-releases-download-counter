@@ -4,7 +4,9 @@
     <head>
     </head>
     <body>
+        <div id="plugin-test"></div>
         <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+        <script type="text/javascript" src="jquery-plugin/jquery-github-releases-download-counter.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 var github = {
@@ -33,6 +35,9 @@
                     console.log(downloads);
 
                 });
+
+                // Test the jquery plugin
+                $("#plugin-test").githubReleasesDownloadCounter();
             });
         </script>
     </body>
