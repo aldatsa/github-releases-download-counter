@@ -24,13 +24,19 @@
             }
 
             $this.each(function() {
-                $(this).text(downloads);
+                $(this).html("<span class='github-releases-download-counter'>" +
+                                "<span class='github-releases-download-counter-label'>" +
+                                    "<span class='github-releases-download-counter-label-icon'>&nbsp;</span>" +
+                                    "<span class='github-releases-download-counter-label-text'>Downloads</span>" +
+                                "</span>" +
+                                "<span class='github-releases-download-counter-number'>" + downloads + "</span>" +
+                             "</span>");
             });
 
         });
 
         // allow jQuery chaining
         return this;
-        
+
     };
 }(jQuery));
