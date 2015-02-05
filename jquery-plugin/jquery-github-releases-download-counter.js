@@ -17,10 +17,9 @@
 
             var downloads = 0;
 
-            var assets = data[0].assets;
-
-            for (var i = 0; i < assets.length; i++) {
-                downloads = downloads + assets[i].download_count;
+            for (var i = 0; i < data.length; i++) {
+                console.log(data[i]);
+                downloads = downloads + data[i].assets[0].download_count;
             }
 
             $this.each(function() {
