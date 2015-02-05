@@ -18,7 +18,6 @@
             var downloads = 0;
 
             for (var i = 0; i < data.length; i++) {
-                console.log(data[i]);
                 downloads = downloads + data[i].assets[0].download_count;
             }
 
