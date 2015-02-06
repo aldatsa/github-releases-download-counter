@@ -37,7 +37,7 @@
 
             } else {
 
-                reject(status);
+                alert("Error. Status code: " + status);
 
             }
         };
