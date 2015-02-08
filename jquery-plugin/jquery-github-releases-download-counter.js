@@ -1,9 +1,13 @@
 (function($) {
-    $.fn.githubReleasesDownloadCounter = function(username, repository_name) {
+    $.fn.githubReleasesDownloadCounter = function(username, repository_name, options) {
 
         var $this = $(this);
 
         var url = "https://api.github.com/repos/" + username + "/" + repository_name + "/releases";
+
+        options = $.extend({
+            button_text: "Downloads"
+        }, options);
 
         if (!username) throw "Must provide a github username.";
 
@@ -27,7 +31,7 @@
                                     "<span class='github-releases-download-counter-label-icon'>&nbsp;</span>" +
                                     "<span class='github-releases-download-counter-label-text'>Downloads</span>" +
                                 "</span>" +
-                                "<span class='github-releases-download-counter-number'>" + downloads + "</span>" +
+                                "<span class='github-releases-download-counter-number'>" + options.button_text + "</span>" +
                              "</span>");
             });
 
