@@ -4,8 +4,9 @@
 
     var tmp_username;
     var tmp_repository_name;
+    var tmp_options;
 
-    var createButton = function(url, element) {
+    var createButton = function(url, element, options) {
 
         var xhr = new XMLHttpRequest();
 
@@ -28,7 +29,7 @@
                 tmp_element.innerHTML = "<span class='github-releases-download-counter'>" +
                     "<span class='github-releases-download-counter-label'>" +
                     "<span class='github-releases-download-counter-label-icon'>&nbsp;</span>" +
-                    "<span class='github-releases-download-counter-label-text'>Downloads</span>" +
+                    "<span class='github-releases-download-counter-label-text'>" + options.button_text + "</span>" +
                     "</span>" +
                     "<span class='github-releases-download-counter-number'>" + downloads + "</span>" +
                     "</span>";
@@ -51,7 +52,11 @@
         tmp_username = elements[i].getAttribute("data-username");
         tmp_repository_name = elements[i].getAttribute("data-repository-name");
 
-        createButton("https://api.github.com/repos/" + tmp_username + "/" + tmp_repository_name + "/releases", elements[i]);
+        tmp_options = {
+            button_text: elements[i].getAttribute("data-button-text") || "Downloads"
+        };
+
+        createButton("https://api.github.com/repos/" + tmp_username + "/" + tmp_repository_name + "/releases", elements[i], tmp_options);
     }
 
 }());
