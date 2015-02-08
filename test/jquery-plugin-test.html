@@ -6,12 +6,15 @@
     </head>
     <body>
         <div id="plugin-test"></div>
+        <div id="plugin-test-2"></div>
         <script type="text/javascript" src="./js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="../jquery-plugin/jquery-github-releases-download-counter.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 // Test the jquery plugin
                 $("#plugin-test").githubReleasesDownloadCounter("aldatsa", "pong-ds");
+
+                $("#plugin-test-2").githubReleasesDownloadCounter("aldatsa", "pong-ds", {button_text: "Deskargak"});
             });
         </script>
     </body>
